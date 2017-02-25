@@ -1,0 +1,21 @@
+{
+  "name": "webtise/bugsnag",
+  "description": "Magento 2 Bugsnag for remote debugging",
+  "require": {
+    "php": "~5.6.5|7.0.2|7.0.4|~7.0.6",
+    "magento/framework": "100.1.*",
+    "magento/magento-composer-installer": "*",
+    "mead-steve/mono-snag": "^3.0.0"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "autoload": {
+    "files": [
+        "registration.php"
+    ],
+    "psr-4": {
+        "Webtise\\BugSnag\\": ""
+    }
+  }
+}

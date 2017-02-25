@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="bugsnag_test_event">
+        <observer name="fire_test_event" instance="Webtise\BugSnag\Observer\Test" />
+    </event>
+    <event name="layout_render_before">
+        <observer name="bugnsag_init" instance="Webtise\BugSnag\Observer\Init" />
+    </event>
+</config>
