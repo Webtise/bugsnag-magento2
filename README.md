@@ -9,15 +9,6 @@ In order to install it run the below command on the root directory:
 
         composer require magento/magento-composer-installer
 
-- Add the VCS repository: So that composer can find the module. Add the following lines in your composer.json
-
-        "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Webtise/bugsnag-magento2.git"
-        }],
-
-
 # Installation
 
 - Add the module to composer:
