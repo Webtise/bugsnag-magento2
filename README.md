@@ -15,6 +15,10 @@ In order to install it run the below command on the root directory:
 
         composer require webtise/bugsnag
 
+- Enable the module:
+
+        bin/magento module:enable Webtise_BugSnag
+
 - Deploy static content and compile DI:
 
         bin/magento setup:static:content:deploy
