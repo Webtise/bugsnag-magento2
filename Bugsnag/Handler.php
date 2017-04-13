@@ -51,7 +51,6 @@ class Handler extends AbstractProcessingHandler
      */
     protected function write(array $record)
     {
-        var_dump($record); die;
         $severity = $this->getSeverity($record['level']);
         if (isset($record['context']['exception'])) {
             $this->bugsnagClient->notifyException(
