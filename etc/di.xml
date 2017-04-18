@@ -12,6 +12,8 @@
         <arguments>
             <argument name="bugsnagClient" xsi:type="object">Webtise\BugSnag\Bugsnag\Client</argument>
             <argument name="level" xsi:type="string">warning</argument>
+            <argument name="bubble" xsi:type="string">true</argument>
+            <argument name="config" xsi:type="object">Webtise\BugSnag\Helper\Config</argument>
         </arguments>
     </type>
     <type name="Magento\Framework\App\Http">
