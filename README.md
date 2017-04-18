@@ -28,9 +28,11 @@ In order to install it run the below command on the root directory:
 
 # Usage
 
-Once installed, login to the admin and navigate to **Stores > Configuration > Advanced > BugSnag**. Enable the extension and enter your BugSnag Project's API Key which can be found in your Bugsnag dashboard. Carry on through the configuration and set your Release Stage and the level of which you want Monolog erros to be sent to Bugsnag. Which ever level you select, errors of this level and above will be sent.
+Once installed, you will need to add your API Key into your install's ***app/etc/env.php*** file in array format like below:
 
-For more information on Monolog's erorr levels, [See their log level docs](https://github.com/Seldaek/monolog/blob/master/doc/01-usage.md#log-levels).
+        'bugsnag' => array(
+            'api_key' => 'YOUR_API_KEY_HERE'
+        ),
 
 # Support
 
