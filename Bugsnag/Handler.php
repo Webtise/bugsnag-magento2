@@ -13,6 +13,7 @@ use Monolog\Logger;
 use Monolog\Handler\AbstractProcessingHandler;
 use Bugsnag\Client as Bugsnag_Client;
 use Bugsnag\Report;
+use Webtise\BugSnag\Helper\Config;
 
 class Handler extends AbstractProcessingHandler
 {
@@ -36,14 +37,25 @@ class Handler extends AbstractProcessingHandler
     protected $bugsnagClient;
 
     /**
+     * @var Config Helper
+     */
+    protected $configHelper;
+
+    /**
      * @param Client $bugsnagClient
      * @param integer      $level       The minimum logging level at which this handler will be triggered
      * @param Boolean      $bubble      Whether the messages that are handled can bubble up the stack or not
      */
-    public function __construct(Bugsnag_Client $bugsnagClient, $level = Logger::DEBUG, $bubble = true)
+    public function __construct(
+        Bugsnag_Client $bugsnagClient,
+        $level = Logger::DEBUG,
+        $bubble = true,
+        Config $config
+    )
     {
         parent::__construct($level, $bubble);
         $this->bugsnagClient = $bugsnagClient;
+        $this->configHelper = $config;
     }
 
     /**
@@ -51,28 +63,30 @@ class Handler extends AbstractProcessingHandler
      */
     protected function write(array $record)
     {
-        $severity = $this->getSeverity($record['level']);
-        if (isset($record['context']['exception'])) {
-            $this->bugsnagClient->notifyException(
-                $record['context']['exception'],
-                function (Report $report) use ($record, $severity) {
-                    $report->setSeverity($severity);
-                    if (isset($record['extra'])) {
-                        $report->setMetaData($record['extra']);
+        if($this->configHelper->getConfiguration()) {
+            $severity = $this->getSeverity($record['level']);
+            if (isset($record['context']['exception'])) {
+                $this->bugsnagClient->notifyException(
+                    $record['context']['exception'],
+                    function (Report $report) use ($record, $severity) {
+                        $report->setSeverity($severity);
+                        if (isset($record['extra'])) {
+                            $report->setMetaData($record['extra']);
+                        }
                     }
-                }
-            );
-        } else {
-            $this->bugsnagClient->notifyError(
-                (string) $record['message'],
-                (string) $record['formatted'],
-                function (Report $report) use ($record, $severity) {
-                    $report->setSeverity($severity);
-                    if (isset($record['extra'])) {
-                        $report->setMetaData($record['extra']);
+                );
+            } else {
+                $this->bugsnagClient->notifyError(
+                    (string)$record['message'],
+                    (string)$record['formatted'],
+                    function (Report $report) use ($record, $severity) {
+                        $report->setSeverity($severity);
+                        if (isset($record['extra'])) {
+                            $report->setMetaData($record['extra']);
+                        }
                     }
-                }
-            );
+                );
+            }
         }
     }
 
