@@ -49,8 +49,10 @@ class ExceptionCatcher
         \Exception $exception
     )
     {
-        $client = new Client($this->config->getConfiguration(), null, Client::makeGuzzle());
-        $client->notifyException($exception);
+        if($this->config->getConfiguration()) {
+            $client = new Client($this->config->getConfiguration(), null, Client::makeGuzzle());
+            $client->notifyException($exception);
+        }
         return [$bootstrap, $exception];
     }
 }
