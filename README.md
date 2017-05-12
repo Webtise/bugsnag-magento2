@@ -34,6 +34,16 @@ Once installed, you will need to add your API Key into your install's ***app/etc
             'api_key' => 'YOUR_API_KEY_HERE'
         ),
 
+## Optional configuration options
+
+More information on [Release Stage](https://docs.bugsnag.com/platforms/php/other/configuration-options/#release-stage) in Bugsnag
+
+        'bugsnag' => array(
+            ...
+            'release_stage' => 'staging',
+            ...
+        ),
+
 # Support
 
 If you have any issues with this extension, open an issue on [GitHub](https://github.com/Webtise/bugsnag-magento2/issues).
