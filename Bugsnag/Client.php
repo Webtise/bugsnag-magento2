@@ -3,12 +3,12 @@
  * Client for BugSnag
  * Extending from bugsnag-php (https://github.com/bugsnag/bugsnag-php)
  *
- * @author Josh Carter <josh@webtise.com>
+ * @author Josh Carter <josh@interjar.com>
  */
-namespace Webtise\BugSnag\Bugsnag;
+namespace Interjar\BugSnag\Bugsnag;
 
 use Bugsnag\Client as BugSnag_Client;
-use Webtise\BugSnag\Helper\Config;
+use Interjar\BugSnag\Helper\Config;
 
 class Client extends BugSnag_Client
 {

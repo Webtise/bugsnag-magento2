@@ -1,4 +1,4 @@
-# Webtise Bugsnag (M2)
+# Interjar Bugsnag (M2)
 
 Bugsnag notifier for Magento 2
 
@@ -13,11 +13,11 @@ In order to install it run the below command on the root directory:
 
 - Add the module to composer:
 
-        composer require webtise/bugsnag
+        composer require interjar/bugsnag
 
 - Enable the module:
 
-        bin/magento module:enable Webtise_BugSnag
+        bin/magento module:enable Interjar_BugSnag
 
 - Deploy static content and compile DI:
 
@@ -46,7 +46,7 @@ More information on [Release Stage](https://docs.bugsnag.com/platforms/php/other
 
 # Support
 
-If you have any issues with this extension, open an issue on [GitHub](https://github.com/Webtise/bugsnag-magento2/issues).
+If you have any issues with this extension, open an issue on [GitHub](https://github.com/Interjar/bugsnag-magento2/issues).
 
 # Contribution
 
@@ -58,4 +58,4 @@ Any contribution is highly appreciated. The best way to contribute code is to op
 
 # Copyright
 
-&copy; 2017 Webtise Ltd
+&copy; 2017 Interjar Ltd
