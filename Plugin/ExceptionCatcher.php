@@ -1,15 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: joshcarter
- * Date: 11/04/2017
- * Time: 14:31
+ * Plugin to catch any uncaught exceptions
+ *
+ * @author Josh Carter <josh@interjar.com>
  */
-namespace Webtise\BugSnag\Plugin;
+namespace Interjar\BugSnag\Plugin;
 
 use Magento\Framework\App\Http;
 use Magento\Framework\App\Bootstrap;
-use Webtise\BugSnag\Helper\Config;
+use Interjar\BugSnag\Helper\Config;
 use Bugsnag\Client;
 
 class ExceptionCatcher

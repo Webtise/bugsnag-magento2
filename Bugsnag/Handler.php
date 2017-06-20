@@ -3,9 +3,9 @@
  * Handler to send messages to BugSnag
  * using bugsnag-php (https://github.com/bugsnag/bugsnag-php)
  *
- * @author Josh Carter <josh@webtise.com>
+ * @author Josh Carter <josh@interjar.com>
  */
-namespace Webtise\BugSnag\Bugsnag;
+namespace Interjar\BugSnag\Bugsnag;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Formatter\FormatterInterface;
@@ -13,7 +13,7 @@ use Monolog\Logger;
 use Monolog\Handler\AbstractProcessingHandler;
 use Bugsnag\Client as Bugsnag_Client;
 use Bugsnag\Report;
-use Webtise\BugSnag\Helper\Config;
+use Interjar\BugSnag\Helper\Config;
 
 class Handler extends AbstractProcessingHandler
 {

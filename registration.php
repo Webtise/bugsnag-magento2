@@ -2,6 +2,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Webtise_BugSnag',
+    'Interjar_BugSnag',
     __DIR__
 );

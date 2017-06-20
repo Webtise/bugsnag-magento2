@@ -1,11 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: joshcarter
- * Date: 11/04/2017
- * Time: 14:36
+ * Helper for BugSnag
+ *
+ * @author Josh Carter <josh@interjar.com>
  */
-namespace Webtise\BugSnag\Helper;
+namespace Interjar\BugSnag\Helper;
 
 use Bugsnag\Configuration;
 use Magento\Framework\App\DeploymentConfig\Reader;
