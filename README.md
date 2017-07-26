@@ -21,7 +21,7 @@ In order to install it run the below command on the root directory:
 
 - Deploy static content and compile DI:
 
-        bin/magento setup:static:content:deploy
+        bin/magento setup:static-content:deploy
         bin/magento setup:di:compile
 
 - Clear cache
