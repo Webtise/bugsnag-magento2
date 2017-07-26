@@ -16,7 +16,7 @@ use Magento\TestFramework\ObjectManager;
 class InstalledTest extends \PHPUnit_Framework_TestCase
 {
 
-    private $moduleName = 'Webtise_BugSnag';
+    private $moduleName = 'Interjar_BugSnag';
     
     /**
     * ObjectManager
