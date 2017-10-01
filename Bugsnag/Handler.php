@@ -44,7 +44,7 @@ class Handler extends AbstractProcessingHandler
     /**
      * @param Bugsnag_Client|Client $bugsnagClient
      * @param int $level The minimum logging level at which this handler will be triggered
-     * @param Boolean $bubble Whether the messages that are handled can bubble up the stack or not
+     * @param \Monolog\Handler\Boolean $bubble Whether the messages that are handled can bubble up the stack or not
      * @param Config $config
      */
     public function __construct(
