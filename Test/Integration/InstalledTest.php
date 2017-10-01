@@ -1,10 +1,10 @@
 <?php
 /**
- * @author joshuacarter
- * @category Webtise
- * @package *PACKAGE NAME*
+ * Integration Test for Interjar_BugSnag
+ *
+ * @author Josh Carter <josh@interjar.com>
  */
-namespace Webtise\BugSnag\Test\Integration;
+namespace Interjar\BugSnag\Test\Integration;
 
 use Magento\Framework\App\DeploymentConfig;
 use Magento\Framework\App\DeploymentConfig\Reader as DeploymentConfigReader;
@@ -16,7 +16,7 @@ use Magento\TestFramework\ObjectManager;
 class InstalledTest extends \PHPUnit_Framework_TestCase
 {
 
-    private $moduleName = 'Webtise_BugSnag';
+    private $moduleName = 'Interjar_BugSnag';
     
     /**
     * ObjectManager

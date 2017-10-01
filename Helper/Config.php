@@ -1,11 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: joshcarter
- * Date: 11/04/2017
- * Time: 14:36
+ * Helper for BugSnag
+ *
+ * @author Josh Carter <josh@interjar.com>
  */
-namespace Webtise\BugSnag\Helper;
+namespace Interjar\BugSnag\Helper;
 
 use Bugsnag\Configuration;
 use Magento\Framework\App\DeploymentConfig\Reader;
@@ -64,14 +63,16 @@ class Config
      */
     public function getConfiguration()
     {
-        $apiKey = $this->getApiKey();
-        $releaseStage = $this->getReleaseStage();
-        if($apiKey) {
-            $this->config = new Configuration($apiKey);
-            if($releaseStage) {
-                $this->config->setReleaseStage($releaseStage);
+        if(isset($this->bugsnagConfig) && is_array($this->bugsnagConfig)) {
+            $apiKey = $this->getApiKey();
+            $releaseStage = $this->getReleaseStage();
+            if ($apiKey) {
+                $this->config = new Configuration($apiKey);
+                if ($releaseStage) {
+                    $this->config->setReleaseStage($releaseStage);
+                }
+                return $this->config;
             }
-            return $this->config;
         }
         return false;
     }
@@ -83,7 +84,7 @@ class Config
      */
     public function getApiKey()
     {
-        if(array_key_exists('api_key', $this->bugsnagConfig)) {
+        if (array_key_exists('api_key', $this->bugsnagConfig)) {
             return $this->bugsnagConfig['api_key'];
         }
         return false;
@@ -96,7 +97,7 @@ class Config
      */
     public function getReleaseStage()
     {
-        if(array_key_exists('release_stage', $this->bugsnagConfig)) {
+        if (array_key_exists('release_stage', $this->bugsnagConfig)) {
             return $this->bugsnagConfig['release_stage'];
         }
         return false;
